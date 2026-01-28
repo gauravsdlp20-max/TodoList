@@ -16,20 +16,6 @@ function Data() {
     const [ data, setData ] = useState([]);
     const [ addData, setAddData ] = useState(initialFormState)
 
-    const fetchData = async () => {
-        try {
-            const res = await getApi()
-            console.log(res.data)
-            setData(res.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    useEffect(() => {
-        fetchData();
-    }, [])
-
     const handleinput = (e) => {
         const name = e.target.name
         const value = e.target.value
